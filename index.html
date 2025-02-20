@@ -9,5 +9,22 @@
 <body>
     <h1>Hello, World!</h1>
     <p>This is my first website.</p>
+    
+    <form id="nameForm">
+        <label for="nameInput">Enter your name:</label>
+        <input type="text" id="nameInput" name="nameInput" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <p id="greetingMessage"></p>
+    
+    <script>
+        document.getElementById('nameForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('nameInput').value;
+            const message = `Hi ${name}! You are very very cute!!`;
+            document.getElementById('greetingMessage').textContent = message;
+        });
+    </script>
 </body>
 </html>
